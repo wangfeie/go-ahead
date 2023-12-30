@@ -16,6 +16,8 @@ public class Main {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(xml);
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
+        sqlSession.clearCache();
+
         Connection connection = sqlSession.getConnection();
         connection.close();
     }
