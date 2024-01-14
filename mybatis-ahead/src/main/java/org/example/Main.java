@@ -22,6 +22,9 @@ public class Main {
         sqlSession.clearCache();
         Configuration configuration = sqlSession.getConfiguration();
         Collection<ResultMap> resultMaps = configuration.getResultMaps();
+        for (ResultMap resultMap : resultMaps) {
+            System.out.println(resultMap);
+        }
 
         Connection connection = sqlSession.getConnection();
         connection.close();
