@@ -30,7 +30,7 @@ public class AsyncProducer {
             try {
                 final int index = i;
                 // 创建一条消息，并指定topic、tag、body等信息，tag可以理解成标签，对消息进行再归类，RocketMQ可以在消费端对tag进行过滤
-                Message msg = new Message("TopicTest",
+                Message msg = new Message("TopicTest-Async",
                         "TagA",
                         "Hello world".getBytes(RemotingHelper.DEFAULT_CHARSET));
                 producer.send(msg, new SendCallback() {

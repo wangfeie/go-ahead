@@ -39,7 +39,7 @@ public class TransactionProducer {
         String[] tags = {"TAGA", "TAGB", "TAGC"};
         for (int i = 0; i < 3; i++) {
             byte[] body = ("Hi," + i).getBytes();
-            Message msg = new Message("TTopic", tags[i], body);
+            Message msg = new Message("TopicTest-Transaction", tags[i], body);
             // 发送事务消息
             // 第二个参数用于指定在执行本地事务时要使用的业务参数
             SendResult sendResult = producer.sendMessageInTransaction(msg, null);

@@ -22,7 +22,7 @@ public class FilterByTagProducer {
         for (int i = 0; i < 10; i++) {
             byte[] body = ("Hi," + i).getBytes();
             String tag = tags[i%tags.length];
-            Message msg = new Message("filterTopic",tag,body);
+            Message msg = new Message("TopicTest-FilterByTag",tag,body);
             SendResult sendResult = producer.send(msg);
             System.out.println(sendResult);
         }

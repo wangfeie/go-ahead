@@ -25,7 +25,7 @@ public class SyncProducer {
 
         for (int i = 0; i < 100; i++) {
             // 创建一条消息，并指定topic、tag、body等信息，tag可以理解成标签，对消息进行再归类，RocketMQ可以在消费端对tag进行过滤
-            Message message = new Message("TopicA", "TagA", ("Hello RocketMQ " + i).getBytes(RemotingHelper.DEFAULT_CHARSET));
+            Message message = new Message("TopicTest-Sync", "TagA", ("Hello RocketMQ " + i).getBytes(RemotingHelper.DEFAULT_CHARSET));
             // 利用producer进行发送，并同步等待发送结果
             SendResult sendResult = producer.send(message);
             System.out.printf("%s%n", sendResult);

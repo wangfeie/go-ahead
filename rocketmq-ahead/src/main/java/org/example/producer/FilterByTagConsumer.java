@@ -19,7 +19,7 @@ public class FilterByTagConsumer {
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("consumerTest");
         consumer.setNamesrvAddr("192.168.77.3:9876;192.168.77.4:9876");
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
-        consumer.subscribe("filterTopic", "myTagA || myTagB");
+        consumer.subscribe("TopicTest-FilterByTag", "myTagA || myTagB");
         consumer.registerMessageListener((MessageListenerConcurrently) (list, consumeConcurrentlyContext) -> {
             for (MessageExt me : list) {
                 System.out.println(me);

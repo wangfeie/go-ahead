@@ -25,7 +25,7 @@ public class BatchProducer {
         List<Message> messages = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             byte[] body = ("Hi," + i).getBytes();
-            Message msg = new Message("batchTopic", "someTag", body);
+            Message msg = new Message("TopicTest-Batch", "someTag", body);
             messages.add(msg);
         }
         // 定义消息列表分割器，将消息列表分割为多个不超出4M大小的小列表

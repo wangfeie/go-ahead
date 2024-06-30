@@ -21,7 +21,7 @@ public class FilterBySQLProducer {
         for (int i = 0; i < 10; i++) {
             try {
                 byte[] body = ("Hi," + i).getBytes();
-                Message msg = new Message("filterTopic", "myTag", body);
+                Message msg = new Message("TopicTest-FilterBySQL", "myTag", body);
                 msg.putUserProperty("age", i + "");
                 SendResult sendResult = producer.send(msg);
                 System.out.println(sendResult);

@@ -22,7 +22,7 @@ public class BatchConsumer {
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("consumerTest");
         consumer.setNamesrvAddr("192.168.77.3:9876;192.168.77.4:9876");
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
-        consumer.subscribe("batchTopic", "*");
+        consumer.subscribe("TopicTest-Batch", "*");
         // 指定每次可以消费10条消息，默认为1
         consumer.setConsumeMessageBatchMaxSize(10);
         // 指定每次可以从Broker拉取40条消息，默认为32

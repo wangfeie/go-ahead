@@ -25,7 +25,7 @@ public class SomeConsumer {
         // 指定从第一条消息开始消费
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         // 指定消费topic与tag
-        consumer.subscribe("TTopic", "*");
+        consumer.subscribe("TopicA", "*");
         // 指定采用“广播模式”进行消费，默认为“集群模式”
         // consumer.setMessageModel(MessageModel.BROADCASTING);
         // 注册消息监听器

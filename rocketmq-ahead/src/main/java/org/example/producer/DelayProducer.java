@@ -23,9 +23,9 @@ public class DelayProducer {
 
         for (int i = 0; i < 10; i++) {
             byte[] body = ("Hi," + i).getBytes();
-            Message msg = new Message("TopicB", "someTag", body);
+            Message msg = new Message("Topic-Delay", "someTag", body);
             // 指定消息延迟等级为3级，即延迟10s
-            msg.setDelayTimeLevel(3);
+            msg.setDelayTimeLevel(9);
             SendResult sendResult = producer.send(msg);
             // 输出消息被发送的时间
             System.out.print(new SimpleDateFormat("mm:ss").format(new Date()));

@@ -25,7 +25,7 @@ public class OrderedProducer {
         for (int i = 0; i < 100; i++) {
             Integer orderId = i;
             byte[] body = ("Hi," + i).getBytes();
-            Message msg = new Message("TopicA", "TagA", body);
+            Message msg = new Message("Topic-Ordered", "TagA", body);
             SendResult sendResult = producer.send(msg, (list, message, o) -> {
                 int index = orderId % list.size();
                 return list.get(index);
